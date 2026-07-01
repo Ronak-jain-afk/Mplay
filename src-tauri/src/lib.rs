@@ -99,7 +99,9 @@ pub fn run() {
                 .item(&quit)
                 .build()?;
 
+            let tray_icon = app.default_window_icon().cloned().unwrap();
             TrayIconBuilder::new()
+                .icon(tray_icon)
                 .menu(&menu)
                 .tooltip("mplay")
                 .on_menu_event(|app, event| {
