@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-28T09:17:00Z",
+  "title": "Design System: mplay",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Cherry Red",
+        "canonical": "oklch(58% 0.25 15)",
+        "tonalRamp": ["#4d000a", "#8a0017", "#c70026", "#ff003c", "#ff143d", "#ff5768", "#ff939f", "#ffd1d5"]
+      },
+      "neutral-bg": {
+        "role": "neutral",
+        "displayName": "Pitch Black",
+        "canonical": "oklch(8% 0 0)",
+        "tonalRamp": ["#000000", "#030303", "#080808", "#111111", "#1a1a1a", "#262626", "#333333", "#4d4d4d"]
+      },
+      "neutral-surface": {
+        "role": "neutral",
+        "displayName": "Matte Charcoal",
+        "canonical": "oklch(15% 0 0)",
+        "tonalRamp": ["#000000", "#080808", "#0f0f0f", "#171717", "#212121", "#2e2e2e", "#3a3a3a", "#545454"]
+      },
+      "neutral-surface-hover": {
+        "role": "neutral",
+        "displayName": "Active Grey",
+        "canonical": "oklch(22% 0 0)",
+        "tonalRamp": ["#080808", "#0f0f0f", "#212121", "#2b2b2b", "#363636", "#444444", "#525252", "#707070"]
+      },
+      "ink-primary": {
+        "role": "neutral",
+        "displayName": "Pure White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": ["#7f7f7f", "#999999", "#b2b2b2", "#cccccc", "#e5e5e5", "#f2f2f2", "#fafafa", "#ffffff"]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Muted Silver",
+        "canonical": "oklch(76% 0 0)",
+        "tonalRamp": ["#333333", "#4d4d4d", "#666666", "#808080", "#999999", "#b3b3b3", "#cccccc", "#e6e6e6"]
+      },
+      "ink-tertiary": {
+        "role": "neutral",
+        "displayName": "Deep Grey",
+        "canonical": "oklch(58% 0 0)",
+        "tonalRamp": ["#1a1a1a", "#333333", "#4d4d4d", "#666666", "#808080", "#999999", "#b3b3b3", "#cccccc"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Main section titles and category labels."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose, track lists, secondary metadata, and text information."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, chips, timecodes, and micro-labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "overlay-shadow",
+        "value": "0 -4px 16px rgba(0,0,0,0.5)",
+        "purpose": "Visual layer separation for the floating bottom player panel."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Standard transitions for hovers, button state switches, and drawer reveals."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Standard pill button used for key user actions (e.g. Play, Shuffle, Action).",
+      "html": "<button class=\"ds-btn-primary\">PLAY</button>",
+      "css": ".ds-btn-primary { background-color: #ff003c; color: #ffffff; padding: 8px 16px; font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; border: none; border-radius: 9999px; cursor: pointer; transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-btn-primary:hover { background-color: #ff2a5d; } .ds-btn-primary:focus-visible { outline: 1px solid #ffffff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Pill button for secondary / utility actions (e.g. Add playlist, More).",
+      "html": "<button class=\"ds-btn-secondary\">+ New playlist</button>",
+      "css": ".ds-btn-secondary { background-color: #212121; color: #ffffff; padding: 8px 16px; font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; border: none; border-radius: 9999px; cursor: pointer; transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-btn-secondary:hover { background-color: #333333; } .ds-btn-secondary:focus-visible { outline: 1px solid #ffffff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Genre Chip",
+      "kind": "chip",
+      "description": "Filter pill used for category selection at the top of the interface.",
+      "html": "<div class=\"ds-chip\">Relax</div>",
+      "css": ".ds-chip { display: inline-block; background-color: #212121; color: #ffffff; padding: 6px 12px; font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; border-radius: 9999px; cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-chip:hover { background-color: #333333; } .ds-chip.active { background-color: #ffffff; color: #030303; }"
+    },
+    {
+      "name": "Music Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Standard square content card displaying album art, title, and metadata.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-cover\"><div class=\"ds-play-overlay\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"#ffffff\"><path d=\"M8 5v14l11-7z\"/></svg></div></div><div class=\"ds-card-title\">my vibe \uD83D\uDC49\uD83C\uDFFE \u2728</div><div class=\"ds-card-subtitle\">xinaudios \u2022 129 tracks</div></div>",
+      "css": ".ds-card { width: 180px; font-family: Inter, system-ui, sans-serif; cursor: pointer; } .ds-card-cover { width: 180px; height: 180px; background-color: #0f0f0f; border-radius: 12px; background-size: cover; position: relative; margin-bottom: 8px; overflow: hidden; } .ds-play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 150ms; } .ds-card:hover .ds-play-overlay { opacity: 1; } .ds-card-title { color: #ffffff; font-size: 0.875rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; } .ds-card-subtitle { color: #b3b3b3; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }"
+    },
+    {
+      "name": "Sidebar Item",
+      "kind": "nav",
+      "description": "Navigation item used in the sidebar list.",
+      "html": "<div class=\"ds-nav-item active\"><svg class=\"ds-nav-icon\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\"><path d=\"M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></svg><span class=\"ds-nav-label\">Home</span></div>",
+      "css": ".ds-nav-item { display: flex; align-items: center; gap: 16px; padding: 12px 16px; border-radius: 12px; cursor: pointer; font-family: Inter, system-ui, sans-serif; transition: background-color 150ms; } .ds-nav-item:hover { background-color: rgba(255,255,255,0.05); } .ds-nav-item.active { background-color: #212121; } .ds-nav-label { font-size: 0.875rem; font-weight: 500; color: #b3b3b3; } .ds-nav-item.active .ds-nav-label { color: #ffffff; } .ds-nav-icon { stroke: #b3b3b3; } .ds-nav-item.active .ds-nav-icon { stroke: #ffffff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Immersive Theater",
+    "overview": "Inspired by premium modern music platforms, 'The Immersive Theater' represents a complete visual design framework tailored for desktop audio playback. The interface is characterized by a high-density, flat-designed layout where content (album art, lyrics, titles) takes center stage, and chrome (sidebar, top bar, player controls) is visually pushed back. Colors are restrained, keeping the interface pitch-black or very dark gray, with cherry red reserved exclusively for key action triggers, progress tracking, and active playback indicators. The design explicitly rejects cluttered 2000s desktop media player layouts, heavy shadows, generic light-mode cards, and unnecessary section subtitles. Instead, it relies on clean typography, precise grid alignment, and interactive hover states to communicate hierarchy and affordance.",
+    "keyCharacteristics": [
+      "Pitch-black background (#030303) to ensure high contrast and highlight colorful album art.",
+      "Deep matte gray panels (#0f0f0f) to group navigation and control regions.",
+      "High-density spacing and tight layout rhythms tailored for efficient content exploration.",
+      "Pill-shaped interaction handles (buttons, chips) matching standard streaming aesthetics."
+    ],
+    "rules": [
+      {
+        "name": "The Restrained Accent Rule",
+        "body": "The Cherry Red accent must never exceed 5% of any screen surface. It is a status indicator and primary action trigger, never a background wash or container fill.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tinted Contrast Rule",
+        "body": "Text colors must maintain at least a 4.5:1 contrast ratio against their respective charcoal/black backgrounds. Avoid muddy gray tints on secondary text; use crisp muted silver.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fixed-Scale Rule",
+        "body": "Do not use fluid viewport-relative typography. Heading scales are fixed in rem/pixel equivalents to prevent text overlap in compact desktop layouts.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Eyebrow Rule",
+        "body": "Section headings must never be accompanied by a small, all-caps tracked uppercase eyebrow. Visual hierarchy is achieved solely through font weight and size.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces must remain flat. Do not pair 1px borders with soft drop shadows. If depth is needed, use alternating neutral surface colors.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use a solid, pitch-black canvas background (#030303) to create maximum contrast for album art.",
+      "Do use fully rounded pill-shaped button borders (border-radius: 9999px) for interactive selectors and action buttons.",
+      "Do maintain a strict 4.5:1 text-to-background contrast ratio using muted silver (#b3b3b3) or pure white (#ffffff).",
+      "Do use the single Inter sans-serif font family across all UI elements to ensure layout density and clean hierarchy."
+    ],
+    "donts": [
+      "Don't use border-left or border-right accent stripes on cards, navigation, or playlist lists.",
+      "Don't apply realistic drop shadows (blur >= 16px) on cards or surface containers; keep them flat.",
+      "Don't use fluid typography scales or all-caps eyebrows above section titles.",
+      "Don't allow active accent colors (Cherry Red) to cover more than 5% of any screen surface."
+    ]
+  }
+}
